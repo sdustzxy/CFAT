@@ -7,13 +7,26 @@ Corruption-invariant Person Re-identification (CIReID) aims to build robust iden
 ![image](https://github.com/user-attachments/assets/27612791-d121-41ad-aab3-b3b8e0965ecc)
 
 ## Quick Start
-### 1.Install dependencies
-● python=3.8.13
-● pytorch=1.12.1
-● torchvision=0.13.1
-● timm=0.6.11
-● albumentations=1.3.0
-● imagecorruptions=1.1.2
-● h5py=3.7.0
-● cython=0.29.32
-● yacs=0.1.8
+### 1.Dependencies
+● python=3.8.13<br>
+● pytorch=1.12.1<br>
+● torchvision=0.13.1<br>
+● timm=0.6.11<br>
+● albumentations=1.3.0<br>
+● imagecorruptions=1.1.2<br>
+● h5py=3.7.0<br>
+● cython=0.29.32<br>
+● yacs=0.1.8<br>
+
+#### Installation
+```python
+pip install -r requirements.txt
+```
+If you find some packages are missing, please install them manually.
+
+## 2.Prepare dataset
+```python
+mkdir data
+```
+Please download the dataset, and then rename and unzip them under the data<br>
+Download the datasets, [Market-1501](https://openaccess.thecvf.com/content_iccv_2015/html/Zheng_Scalable_Person_Re-Identification_ICCV_2015_paper.html), [CUHK03](https://openaccess.thecvf.com/content_cvpr_2014/html/Li_DeepReID_Deep_Filter_2014_CVPR_paper.html), [MSMT17](https://arxiv.org/abs/1711.08565).
