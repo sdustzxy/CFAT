@@ -24,9 +24,21 @@ pip install -r requirements.txt
 ```
 If you find some packages are missing, please install them manually.
 
-## 2.Prepare dataset
+### 2.Prepare dataset
 ```python
 mkdir data
 ```
 Please download the dataset, and then rename and unzip them under the data<br>
 Download the datasets, [Market-1501](https://openaccess.thecvf.com/content_iccv_2015/html/Zheng_Scalable_Person_Re-Identification_ICCV_2015_paper.html), [CUHK03](https://openaccess.thecvf.com/content_cvpr_2014/html/Li_DeepReID_Deep_Filter_2014_CVPR_paper.html), [MSMT17](https://arxiv.org/abs/1711.08565).
+
+### 3.Train
+Train a CAFT model on Market-1501,
+```python
+python train.py
+```
+
+### 4.Test
+Test a CAFT model on Market-1501,
+```python
+python test.py
+```
