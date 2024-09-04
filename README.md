@@ -42,3 +42,9 @@ Test a CAFT model on Market-1501,
 ```python
 python test.py
 ```
+
+## Acknowledgement
+Our code is extended from the following repositories. We thank the authors for releasing the codes.<br>
+[TransReID](https://github.com/damo-cv/TransReID)<br>
+[CIL-ReID](https://github.com/MinghuiChen43/CIL-ReID)
+
