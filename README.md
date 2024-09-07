@@ -39,6 +39,7 @@ Train a CAFT model on Market-1501,
 ```python
 python train.py
 ```
+Parameter settings: .\config\defaults.py
 
 ### 5.Test
 Test a CAFT model on Market-1501,
