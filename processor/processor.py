@@ -151,11 +151,23 @@ def do_train(cfg, model, model_, models, center_criterion, train_loader, val_loa
                 loss_en1 = loss_fn(score, feat, target, target_cam)
                 loss_en2 = loss_fn(score, re_feat, target, target_cam)
                 loss = loss_en1 + loss_en2 + vae_loss + contrast_loss
+                # loss1 = loss_en1 + loss_en2 + contrast_loss
+                # loss2 = loss_en1 + loss_en2 + vae_loss
 
             scaler.scale(loss).backward()
             scaler.step(optimizer_encoder)
             scaler.update()
             optimizer_encoder.zero_grad()
+            '''
+            scaler.scale(loss1).backward(retain_graph=True)
+            scaler.step(optimizer_encoder)
+            scaler.update()
+            optimizer_encoder.zero_grad()
+            scaler.scale(loss2).backward()
+            scaler.step(optimizer_encoder)
+            scaler.update()
+            optimizer_encoder.zero_grad()
+            '''
 
             if isinstance(score, list):
                 acc = (score[0].max(1)[1] == target).float().mean()
