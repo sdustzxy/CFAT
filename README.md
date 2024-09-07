@@ -31,8 +31,8 @@ mkdir data
 Please download the dataset, and then rename and unzip them under the data<br>
 Download the datasets, [Market-1501](https://openaccess.thecvf.com/content_iccv_2015/html/Zheng_Scalable_Person_Re-Identification_ICCV_2015_paper.html), [CUHK03](https://openaccess.thecvf.com/content_cvpr_2014/html/Li_DeepReID_Deep_Filter_2014_CVPR_paper.html), [MSMT17](https://arxiv.org/abs/1711.08565).
 
-### 3.Our model parameters
-[Parameter](https://1drv.ms/f/c/25ca6820bee662c1/EiMEWZ9gU-VLrHCZ18ZfqyoB3AMeupI2NblHcSgeWgk2jQ?e=nDUa6a)
+### 3.Model Zoo
+We provide the trained models available for download in the [Parameter](https://1drv.ms/f/c/25ca6820bee662c1/EiMEWZ9gU-VLrHCZ18ZfqyoB3AMeupI2NblHcSgeWgk2jQ?e=nDUa6a)
 
 ### 4.Train
 Train a CAFT model on Market-1501,
