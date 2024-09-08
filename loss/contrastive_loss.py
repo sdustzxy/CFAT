@@ -7,11 +7,11 @@ class ContrastiveLoss(nn.Module):
     def __init__(self, batch_size, device='cuda', temperature=0.5):
         super().__init__()
         self.batch_size = batch_size
-        self.register_buffer("temperature", torch.tensor(temperature).to(device))  # 超参数 温度
+        self.register_buffer("temperature", torch.tensor(temperature).to(device))  
         self.register_buffer("negatives_mask", (
-            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  # 主对角线为0，其余位置全为1的mask矩阵
+            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  
 
-    def forward(self, emb_i, emb_j):  # emb_i, emb_j 是来自同一图像的两种不同的预处理方法得到
+    def forward(self, emb_i, emb_j):  
         z_i = F.normalize(emb_i, dim=1)  # (bs, dim)  --->  (bs, dim)
         z_j = F.normalize(emb_j, dim=1)  # (bs, dim)  --->  (bs, dim)
 
@@ -32,16 +32,15 @@ class ContrastiveLoss(nn.Module):
 
 
 class WeightedContrastiveLoss1(nn.Module):
-    # 权重可以是除以余弦相似度，也可以是乘以余弦距离。用余弦相似度做权重，会使整体损失偏小，而余弦距离会使整体损失偏大。
-    # 现在用的是余弦相似度作为权重
+
     def __init__(self, batch_size, device='cuda', temperature=0.5):
         super().__init__()
         self.batch_size = batch_size
-        self.register_buffer("temperature", torch.tensor(temperature).to(device))  # 超参数 温度
+        self.register_buffer("temperature", torch.tensor(temperature).to(device))  
         self.register_buffer("negatives_mask", (
-            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  # 主对角线为0，其余位置全为1的mask矩阵
+            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  
 
-    def forward(self, emb_i, emb_j):  # emb_i, emb_j 是来自同一图像的两种不同的预处理方法得到
+    def forward(self, emb_i, emb_j):  
         z_i = F.normalize(emb_i, dim=1)  # (bs, dim)  --->  (bs, dim)
         z_j = F.normalize(emb_j, dim=1)  # (bs, dim)  --->  (bs, dim)
 
@@ -66,16 +65,15 @@ class WeightedContrastiveLoss1(nn.Module):
 
 
 class WeightedContrastiveLoss2(nn.Module):
-    # 权重可以是除以余弦相似度，也可以是乘以余弦距离。用余弦相似度做权重，会使整体损失偏小，而余弦距离会使整体损失偏大。
-    # 现在用的是余弦距离作为权重
+
     def __init__(self, batch_size, device='cuda', temperature=0.5):
         super().__init__()
         self.batch_size = batch_size
-        self.register_buffer("temperature", torch.tensor(temperature).to(device))  # 超参数 温度
+        self.register_buffer("temperature", torch.tensor(temperature).to(device)) 
         self.register_buffer("negatives_mask", (
-            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  # 主对角线为0，其余位置全为1的mask矩阵
+            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  
 
-    def forward(self, emb_i, emb_j):  # emb_i, emb_j 是来自同一图像的两种不同的预处理方法得到
+    def forward(self, emb_i, emb_j):  
         z_i = F.normalize(emb_i, dim=1)  # (bs, dim)  --->  (bs, dim)
         z_j = F.normalize(emb_j, dim=1)  # (bs, dim)  --->  (bs, dim)
 
@@ -100,16 +98,15 @@ class WeightedContrastiveLoss2(nn.Module):
 
 
 class WeightedContrastiveLoss3(nn.Module):
-    # 权重可以是除以余弦相似度，也可以是乘以余弦距离。用余弦相似度做权重，会使整体损失偏小，而余弦距离会使整体损失偏大。
-    # 现在把这个权重的位置改变，不计算到每一项上进入公式计算，而是直接在公式外当做系数进行计算（余弦相似度）
+
     def __init__(self, batch_size, device='cuda', temperature=0.5):
         super().__init__()
         self.batch_size = batch_size
-        self.register_buffer("temperature", torch.tensor(temperature).to(device))  # 超参数 温度
+        self.register_buffer("temperature", torch.tensor(temperature).to(device)) 
         self.register_buffer("negatives_mask", (
-            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  # 主对角线为0，其余位置全为1的mask矩阵
+            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  
 
-    def forward(self, emb_i, emb_j):  # emb_i, emb_j 是来自同一图像的两种不同的预处理方法得到
+    def forward(self, emb_i, emb_j):  
         z_i = F.normalize(emb_i, dim=1)  # (bs, dim)  --->  (bs, dim)
         z_j = F.normalize(emb_j, dim=1)  # (bs, dim)  --->  (bs, dim)
 
@@ -133,16 +130,15 @@ class WeightedContrastiveLoss3(nn.Module):
 
 
 class WeightedContrastiveLoss4(nn.Module):
-    # 权重可以是除以余弦相似度，也可以是乘以余弦距离。用余弦相似度做权重，会使整体损失偏小，而余弦距离会使整体损失偏大。
-    # 现在把这个权重的位置改变，不计算到每一项上进入公式计算，而是直接在公式外当做系数进行计算（余弦距离）
+
     def __init__(self, batch_size, device='cuda', temperature=0.5):
         super().__init__()
         self.batch_size = batch_size
-        self.register_buffer("temperature", torch.tensor(temperature).to(device))  # 超参数 温度
+        self.register_buffer("temperature", torch.tensor(temperature).to(device))  
         self.register_buffer("negatives_mask", (
-            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  # 主对角线为0，其余位置全为1的mask矩阵
+            ~torch.eye(batch_size * 2, batch_size * 2, dtype=bool).to(device)).float())  
 
-    def forward(self, emb_i, emb_j):  # emb_i, emb_j 是来自同一图像的两种不同的预处理方法得到
+    def forward(self, emb_i, emb_j): 
         z_i = F.normalize(emb_i, dim=1)  # (bs, dim)  --->  (bs, dim)
         z_j = F.normalize(emb_j, dim=1)  # (bs, dim)  --->  (bs, dim)
 
