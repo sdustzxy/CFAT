@@ -82,9 +82,9 @@ if __name__ == '__main__':
                         view_num=view_num)
     bfg_model = BFG(input_dim=768, output_dim=768, hidden_dim=128, latent_dim=16)
 
-    model.load_param("/public/home/zhangxinyu/RudReID/logs/without_JPM+Cor/transformer_120.pth")
-    model_.load_param("/public/home/zhangxinyu/RudReID/logs/without_JPM/transformer_120.pth")
-    bfg_model.load_param("/public/home/zhangxinyu/exp_result/11-16_vae-model/implicit_120.pth")
+    model.load_param("./pth/Market1501/pertrain/pretrain_cor.pth")
+    model_.load_param("./pth/Market1501/pertrain/pretrain.pth")
+    bfg_model.load_param("./pth/BrowBir/BB_120.pth")
 
     models = nn.Sequential(model, bfg_model)
 
