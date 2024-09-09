@@ -55,28 +55,12 @@ class BrownianBridgeLoss(nn.Module):
 
     def forward(self, feat_clear, feat_cor, feat_mid, t):
         feat_cl = F.normalize(feat_clear, dim=1)
-        # with open('./feat_cl.txt', 'a') as f:
-        #     print(feat_cl, file=f)
         feat_co = F.normalize(feat_cor, dim=1)
-        # with open('./feat_co.txt', 'a') as g:
-        #     print(feat_co, file=g)
         feat_mi = F.normalize(feat_mid, dim=1)
-        # with open('./feat_mi.txt', 'a') as h:
-        #     print(feat_mi, file=h)
         loss = 0.0
         for i in range(feat_mid.shape[0]):
             micro_feat = self.micro(feat_cl[i], feat_co[i], t)
             sim_cm1 = F.cosine_similarity(feat_cl[i].unsqueeze(0), micro_feat.unsqueeze(0), dim=1)
             sim_cm2 = F.cosine_similarity(feat_co[i].unsqueeze(0), micro_feat.unsqueeze(0), dim=1)
-            with open('./sim_cm1.txt', 'a') as d:
-                print(sim_cm1, file=d)
-            with open('./sim_cm2.txt', 'a') as e:
-                print(sim_cm2, file=e)
-            # import pdb; pdb.set_trace()
-            # with open('./micro_feat.txt', 'a') as e:
-            #     print(micro_feat, file=e)
-            brownian_bridge_loss = self.mse(feat_mi[i], micro_feat)
-            # with open('./brownian_bridge_loss.txt', 'a') as d:
-            #     print(brownian_bridge_loss, file=d)
         loss += brownian_bridge_loss / feat_cor.shape[0]
         return loss * 1e6
