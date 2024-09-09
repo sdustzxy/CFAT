@@ -110,7 +110,7 @@ _C.DATASETS = CN()
 # List of the dataset names for training, as present in paths_catalog.py
 _C.DATASETS.NAMES = ('market1501')
 # Root directory where datasets should be used (and downloaded if not found)
-_C.DATASETS.ROOT_DIR = ('/public/home/zhangxinyu/CILdataset')
+_C.DATASETS.ROOT_DIR = ('./data')
 
 # -----------------------------------------------------------------------------
 # DataLoader
@@ -187,7 +187,7 @@ _C.TEST.IMS_PER_BATCH = 256
 # If test with re-ranking, options: 'True','False'
 _C.TEST.RE_RANKING = False
 # Path to trained model
-_C.TEST.WEIGHT = "/public/home/zhangxinyu/M_FW/CAFT_git/log/Market1501/120.pth"
+_C.TEST.WEIGHT = "./pth/Market1501/120.pth"
 # Which feature of BNNeck to be used for test, before or after BNNneck, options: 'before' or 'after'
 _C.TEST.NECK_FEAT = 'before'
 # Whether feature is nomalized before test, if yes, it is equivalent to cosine distance
@@ -205,4 +205,4 @@ _C.TEST.AUGMENT = False
 # Misc options
 # ---------------------------------------------------------------------------- #
 # Path to checkpoint and saved log of trained model
-_C.OUTPUT_DIR = "/public/home/zhangxinyu/M_FW/CAFT_git/log/Market1501"
+_C.OUTPUT_DIR = "./log/Market1501"
