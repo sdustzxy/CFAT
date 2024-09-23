@@ -24,7 +24,7 @@ _C.MODEL.NAME = 'transformer'
 # Last stride of backbone
 _C.MODEL.LAST_STRIDE = 1
 # Path to pretrained model of backbone
-_C.MODEL.PRETRAIN_PATH = '/public/home/zhangxinyu/pretrain/jx_vit_base_p16_224-80ecf9dd.pth'
+_C.MODEL.PRETRAIN_PATH = './pretrain/jx_vit_base_p16_224-80ecf9dd.pth'
 
 # Use ImageNet pretrained model to initialize backbone or use self trained model to initialize the whole model
 # Options: 'imagenet' , 'self' , 'finetune'
