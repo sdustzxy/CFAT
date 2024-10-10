@@ -32,7 +32,7 @@ Please download the dataset, and then rename and unzip them under the data<br>
 Download the datasets, [Market-1501](https://openaccess.thecvf.com/content_iccv_2015/html/Zheng_Scalable_Person_Re-Identification_ICCV_2015_paper.html), [CUHK03](https://openaccess.thecvf.com/content_cvpr_2014/html/Li_DeepReID_Deep_Filter_2014_CVPR_paper.html), [MSMT17](https://arxiv.org/abs/1711.08565).
 
 ### 3.Usage
-Trained model are provided. You may download it from [Goodle Drive](https://1drv.ms/f/c/25ca6820bee662c1/EiMEWZ9gU-VLrHCZ18ZfqyoB3AMeupI2NblHcSgeWgk2jQ?e=nDUa6a).
+Trained model are provided. You may download it from [Google Drive](https://1drv.ms/f/c/25ca6820bee662c1/EiMEWZ9gU-VLrHCZ18ZfqyoB3AMeupI2NblHcSgeWgk2jQ?e=nDUa6a).
 
 #### 1.Train
 Train a CAFT model on Market-1501,
@@ -45,6 +45,22 @@ Parameter settings: .\config\defaults.py
 Test a CAFT model on Market-1501,
 ```python
 python test.py
+```
+
+### 4.Corruption
+
+
+## Citation
+```python
+@article{10703072,
+  author={Zhang, Xinyu and Zhang, Peng and Shan, Caifeng},
+  journal={IEEE Transactions on Circuits and Systems for Video Technology}, 
+  title={Corruption-invariant Person Re-identification Via Coarse-to-Fine Feature Alignment}, 
+  year={2024},
+  volume={},
+  number={},
+  pages={1-1},
+  doi={10.1109/TCSVT.2024.3472122}}
 ```
 
 ## Acknowledgement
