@@ -48,7 +48,11 @@ python test.py
 ```
 
 ### 4.Corruption
-
+The visualization results of 20 corruptions.
+![5c2588655c30f5b8f126c574a3ccddc1](https://github.com/user-attachments/assets/5d793efd-7e26-45b6-898f-c6f7dae97132)
+Each corruption has 5 different severity levels.
+![gaussian_noise jpg](https://github.com/user-attachments/assets/f722e1a0-079b-44c7-92d5-4bec889abdd1)
+![brightness](https://github.com/user-attachments/assets/5fe32dd2-831f-4d95-ad19-bb4fa950a97a)
 
 ## Citation
 ```python
